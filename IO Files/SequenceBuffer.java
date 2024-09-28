@@ -1,0 +1,36 @@
+import java.io.*;
+class  SequenceBuffer
+{
+public static void main(String[] args) 
+	throws IOException
+    {
+    //Declare File streams
+   FileInputStream f1=null;
+   FileInputStream f2=null; 
+   
+   //declare f3 to store combined files
+   
+   SequenceInputStream f3=null;
+  
+   //open the files to be concatenated
+
+  f1=new FileInputStream("text1.txt");
+  f2=new FileInputStream("text2.txt");
+
+  //concatenate f1 & f2 into f3
+ f3=new SequenceInputStream(f1,f2);
+//create buffered input and output streams
+BufferedInputStream bis=new BufferedInputStream(f3);
+BufferedOutputStream bos=new BufferedOutputStream(System.out);
+//read and write till the end of buffers
+ int ch;
+ while((ch=bis.read())!=-1)
+		{
+	     bos.write((char)ch);
+		}
+		bis.close();
+		bos.close();
+        f1.close();
+        f2.close();
+	}
+}

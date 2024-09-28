@@ -1,0 +1,11 @@
+interface <name of inteface>
+     {
+         <method declaration1>;
+           .
+           .
+      }
+
+class <class name> implements <interface1,interface2,....>
+{
+.....
+}
