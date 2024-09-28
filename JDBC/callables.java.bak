@@ -1,0 +1,42 @@
+import java.util.*;
+import java.sql.*;
+import java.sql.CallableStatement;
+class  callables
+{
+ public static void main(String args[])
+ {
+  try{
+     Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection c=DriverManager.getConnection("jdbc:odbc:friends");
+Statement st=c.createStatement();
+System.out.println("Executing SQL:");
+ResultSet rs=st.executeQuery("select * from student");
+	try
+	  {
+    	while(rs.next())
+	      {
+         System.out.print(rs.getString("sname")+": "); 
+	 System.out.print(rs.getInt("regno")+" ");
+         System.out.println(rs.getDate("date"));
+		        System.out.println(rs.getString("address")+:" ");
+
+	}
+	c.close();
+	}
+	
+	catch(Exception e)
+		{
+         System.out.println("Inside:"+e);
+		}
+		}
+
+	catch(Exception e)
+		{
+         System.out.println(e);
+         System.out.println("Cannot find the class");
+		}
+}
+}
+
+
+

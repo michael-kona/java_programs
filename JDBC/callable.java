@@ -1,0 +1,41 @@
+import java.util.*;
+import java.sql.*;
+import java.sql.CallableStatement;
+class  callable
+{
+ public static void main(String args[])
+ {
+  try{
+     Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection c=DriverManager.getConnection("jdbc:odbc:ssss");
+Statement st=c.createStatement();
+System.out.println("Executing SQL:");
+ResultSet rs=st.executeQuery("select * from StudentGradeInfo");
+	try
+	  {
+    	while(rs.next())
+	      {
+         System.out.print(rs.getString("Name")+": "); 
+	 System.out.print(rs.getInt("Roll")+" ");
+         System.out.println(rs.getString("Grade"));
+
+	}
+	c.close();
+	}
+	
+	catch(Exception e)
+		{
+         System.out.println("Inside:"+e);
+		}
+		}
+
+	catch(Exception e)
+		{
+         System.out.println(e);
+         System.out.println("Cannot find the class");
+		}
+}
+}
+
+
+
