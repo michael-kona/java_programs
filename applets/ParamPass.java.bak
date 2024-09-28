@@ -1,0 +1,18 @@
+import java.awt.*;
+import java.applet.Applet;
+public class  ParamPass extends Applet
+{
+String str;
+public void init()
+	{
+	str=getParameter("michael");
+	if(str==null)
+		str="BAD BOY";
+	else
+		str=str+"very very bad";
+	}
+	public void paint(Graphics g)
+	{
+		g.drawString(str,100,100);
+	}
+}
