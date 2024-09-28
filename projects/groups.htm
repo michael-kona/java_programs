@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.srikanthtechnologies.com/javaee/projects/groups.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY bgColor=wheat>
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 20pt arial; COLOR: maroon
+}
+H2 {
+	FONT: 700 16pt arial; COLOR: navy
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<H1>Groups</H1>This is a web application to allow user to share information 
+regarding different areas. Users create groups for different topics and share 
+the information with others. 
+<P>A user creates a group and other, who are interested int the topic, join the 
+group and they share messages, links, and files. 
+<P>This application can be used in any intranet enviornment like a company or 
+college. 
+<P>
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>Tomcat 4.x 
+  <LI>Oracle8i 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans 
+  <LI>Commons-fileupload library 
+  <LI>Java Mail 
+  <LI>Mail Server - CMailServer </LI></UL>
+<H3>Major Operations </H3>
+<P>The following are the major operations of this application: 
+<P>
+<TABLE cellPadding=2 border=1>
+  <TBODY>
+  <TR style="FONT: 700 10pt verdana; COLOR: white; BACKGROUND-COLOR: navy">
+    <TH>Operation 
+    <TH>Description 
+    <TH>Related Files and Objects </TR>
+  <TR>
+    <TD>Login page 
+    <TD>Allows user to log into the application using user name and password. 
+    <TD>login.jsp, UserBean Javabean </TD>
+  <TR>
+    <TD>Forgot password 
+    <TD>Send password of the user as mail to user's email address by taking 
+      username 
+    <TD>forgotpassword.jsp, JavaMail API </TD>
+  <TR>
+    <TD>Home page 
+    <TD>Display details of groups to which user is a member and other links 
+      such as Search For Group, Join A Group, Change Password etc. 
+    <TD>home.jsp , UserBean JavaBean </TD>
+  <TR>
+    <TD>Change Password 
+    <TD>Allows user to change his/her password. 
+    <TD>changepassword.jsp, UserBean JavaBean </TD>
+  <TR>
+    <TD>Log out 
+    <TD>Allows user to log out of the application. 
+    <TD>logout.jsp </TD>
+  <TR>
+    <TD>Create Group 
+    <TD>Takes group name and description and creates a new group. 
+    <TD>creategroup.html, creategroup.jsp, UserBean JavaBean, GroupBean 
+      JavaBean </TD>
+  <TR>
+    <TD>Search Groups 
+    <TD>Searches for groups based on name, description and creation date. 
+    <TD>searchgroup.jsp, listgroups.jsp </TD>
+  <TR>
+    <TD>Join group 
+    <TD>Displays list of groups to which current user is a member and allows 
+      user to join the selected group. 
+    <TD>othergroups.jsp,listgroups.jsp, GroupBean JavaBean, UserBean JavaBean 
+    </TD>
+  <TR>
+    <TD>Manage Group 
+    <TD>Allows the owner of the group to change group details or delete group. 
+
+    <TD>managegroup.jsp, GroupBean JavaBean, deletegroup stored procedure. </TD>
+  <TR>
+    <TD>Group Home 
+    <TD>Displays details of the selected group and links related to group. 
+    <TD>grouphome.jsp , UserBean JavaBean </TD>
+  <TR>
+    <TD>Leave group 
+    <TD>Allows user to leave the group. 
+    <TD>leavegroup.jsp, GroupBean JavaBean, UserBean JavaBean </TD>
+  <TR>
+    <TD>List Messages 
+    <TD>Displays messages of the current group. Provides link to post new 
+      message. 
+    <TD>messages.jsp </TD>
+  <TR>
+    <TD>Post Message 
+    <TD>Takes message subject and body and adds message. 
+    <TD>postmessage.jsp, MessageBean JavaBean, UserBean JavaBean </TD>
+  <TR>
+    <TD>Delete Message 
+    <TD>Deletes the message. Only owner of the message can delete the message. 
+
+    <TD>deletemessage.jsp, MessageBean JavaBean </TD>
+  <TR>
+    <TD>List Files 
+    <TD>Displays files of the current group. Provides link to add new file. 
+    <TD>files.jsp </TD>
+  <TR>
+    <TD>Add File 
+    <TD>Allows user to upload file from client. It takes name of the file and 
+      description. File is copies into <B>files</B> directory of the application 
+      in the server. 
+    <TD>addfile.jsp, commons-fileupload library, UserBean JavaBean. </TD>
+  <TR>
+    <TD>Delete File 
+    <TD>Deletes the file. Only owner of the file can delete the file. 
+    <TD>deletefile.jsp </TD>
+  <TR>
+    <TD>Invite Others 
+    <TD>Allows user to send mail to others with invitaion message. 
+    <TD>invite.html, invite.jsp, JavaMail API, UserBean JavaBean 
+</TD></TR></TBODY></TABLE>
+<H3>Note:</H3>
+<UL>
+  <LI>Create Table commands to create realated to this application are placed in 
+  <B>tables.sql</B> file. 
+  <LI>Links related code is left to students as assignment. </LI></UL>
+<H2>Steps To Run Application </H2>
+<P><B>The following are the steps to related to be taken to run this application 
+:</B> 
+<P>
+<OL>
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/groups.zip">groups.zip</A> 
+  and unzip it into <B>webapps</B> directory of Tomcat installation directory. A 
+  directory with the name <B>groups </B>is created. 
+  <LI>Make sure you copy <B>classes111.zip </B>( after renaming it to 
+  classes111.jar) or <B>classes12.jar</B> into WEB-INF/lib directory 
+  <LI>Copy<B>commons-fileupload.jar</B> WEB-INF/lib directory. You can find this 
+  file in <B>Jakarta Struts</B>. 
+  <LI>Set the PATH and CLASSPATH using the batch file <B>S.BAT</B> that is 
+  placed in <B>/WEB-INF/classes/groups</B> directory. Make necessary changes to 
+  <B>S.BAT </B>according to location of JDK and TOMCAT in your system. 
+  <LI>Compile JavaBean in <B>/WEB-INF/classes/groups</B> directory as follows: <PRE>     javac *.java
+   </PRE>
+  <LI>Create account <B>groups</B> with password <B>groups</B> in Oracle 
+  Database. If you cannot do this, you can still use SCOTT account with TIGER 
+  password. Then palce tables in SCOTT account instead of <B>GROUPS</B> account. 
+  <BR>Make sure you change username and password in <B>DBUtil.java 
+  </B>accordingly. 
+  <LI>Log onto Oracle using either <B>groups</B> account or <B>scott</B> 
+  account. 
+  <LI>Create required tables in Oracle using <B>tables.sql</B> file. 
+  <LI>Create <B>files</B> folder in <B>webapps/groups</B> directory. 
+  <LI>Make sure CMailServer is running and create email accounts for users in 
+  it. 
+  <LI>If you are using other than Tomcat 4.0 then copy JavaMail related jar 
+  files to <B>WEB-INF/lib</B> directory. You can down load JavaMail from <A 
+  href="http://java.sun.com/" target=blank>java.sun.com</A>. 
+  <LI>Run the application using the following url: <PRE>   http://localhost:8080/groups
+ </PRE>
+  <LI>You should see login page of the application. </LI></OL>
+<H3>Deploying Application In Weblogic Server </H3>Following the steps given 
+below to deploy <B>groups </B>application in <B>weblogic server 7.0 </B>. 
+<OL>
+  <LI>Copy <B>groups</B> application to some directory inside Weblogic 
+  directory. This step is optional. 
+  <LI>Set PATH and CLASSPATH using <B>ws.bat</B> file that is in 
+  <B>WEB-INF/classes/groups</B> directory. Change PATH and CLASSPATH according 
+  to installation of Weblogic server in your system. 
+  <LI>Compile JavaBeans using <PRE>  javac *.java
+ </PRE>
+  <LI>Start Weblogic server 
+  <LI>Goto <B>Admin Console</B> 
+  <LI>Select <B>Web Applications</B> Node in left side tree. 
+  <LI>Select <B>Configure a new Web Application...</B> from right side frame. 
+  <LI>Select directory where <B>groups</B> application is placed and click on 
+  <B>Select </B>link on the left of the directory. 
+  <LI>From available servers, select the server and click on right arrow. 
+  <LI>Click on <B>Configure and Deploy </B>button. 
+  <LI>Once <B>Deployed </B>columns shows <B>True</B>, you can access it as 
+  follows: 
+  <P>http://localhost:7001/groups </P></LI></OL></BODY></HTML>

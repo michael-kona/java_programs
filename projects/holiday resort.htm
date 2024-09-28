@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.srikanthtechnologies.com/javaee/projects/ma.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY>
+<H1>Holiday Resorts Members Assistant</H1>This is an internet application aimed 
+at assisting Sterling Resorts Members. Each member is given a member id and 
+password, using which a member logs in. Member can get details of various 
+resorts of Sterling Resorts their seasons and other relevant information. Member 
+can provide feedback, change their address and password, and make a request for 
+vacation. 
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>NetBeans 5.5 
+  <LI>Tomcat 5.5 embedded in NetBeans 
+  <LI>Oracle10g Express Edition 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans 
+  <LI>CMail Server and JavaMail </LI></UL>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Create <STRONG>ma</STRONG>account with password <STRONG>ma</STRONG> in 
+  Oracle10g Express Edition. This must be done after you log in as SYSTEM user. <PRE> 
+     create user ma identified by ma;
+     grant connect,resource to ma;
+    </PRE>
+  <LI>Create required tables in <STRONG>ma</STRONG> account by using commands in 
+  <B>tables.txt</B> file (you find it in your project when you go to files view 
+  of NetBeans). . 
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/ma.zip">ma.zip</A> 
+  and unzip it into <B>d:\</B> directory. You can substitute <B>d:\</B> with 
+  another path if you like. 
+  <LI>Start NetBeans 5.5. 
+  <LI>Open <B>ma</B> project in NetBeans using <B>File-&gt;Open Project</B> 
+  option and select directory <B>ma</B>. Project from <B>ma</B> is opened. 
+  <LI>Add Oracle Library - <B>ojdbc14.jar</B>, <STRONG>Java Mail (mail.jar, 
+  activation.jar) </STRONG>library to <B>flashcard</B> project. 
+  <LI>Build and deploy the project to embedded Tomcat of NetBeans. 
+  <LI>Run this project - you must see <B>index.jsp</B> page. </LI></OL>
+<H3>Deploying Web Application In Tomcat of JBoss </H3>The following procedure 
+explains how to deploy a web application <B>ma</B>, developed with Tomcat that 
+is embedded with NetBeans to Tomcat embedded in JBOSS application server. 
+<OL>
+  <LI>You better change port number at which Tomcat in JBoss is running using 
+  <B>JBOSS_HOME\server\default\deploy\jbossweb-tomcat55.sar\server.xml</B> file. 
+  Change port number of HTTP Container from 8080 to 9999. <BR>This is required 
+  as <B>Oracle10g</B> also uses 8080. 
+  <LI>Copy <B>ma.war</B> from <B>dist</B> directory of <B>ma</B> project into 
+  <B>JBOSS_HOME\server\default\deploy</B> directory. 
+  <LI>Run the application using the following url: <PRE>   http://localhost:9999/ma
+ </PRE>
+  <LI>You should see login page of the application. </LI></OL></BODY></HTML>

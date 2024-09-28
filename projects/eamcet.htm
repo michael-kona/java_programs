@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.srikanthtechnologies.com/javaee/projects/eamcet.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY bgColor=wheat>
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+</STYLE>
+
+<H1>EAMCET Counselling</H1>This is a web application to computerise EAMCET 
+counselling process. 
+<P>This application is used by three different types of people. 
+<UL>
+  <LI>Administrator 
+  <LI>Counsellors 
+  <LI>Students </LI></UL>
+<H3>Operations </H3>The following are the topics to be performed by different 
+types of users 
+<P>
+<TABLE cellPadding=2 border=1>
+  <TBODY>
+  <TR>
+    <TH>User Type 
+    <TH>Operation </TR>
+  <TR>
+    <TD>Administrator 
+    <TD>Adding Centres, Colleges, Branches and updating all three. </TD>
+  <TR>
+    <TD>Cousellors 
+    <TD>Registering students, recording preferences of students, and alloting 
+      seats </TD>
+  <TR>
+    <TD>Students 
+    <TD>Querying the availablity of seats </TD></TR></TBODY></TABLE>
+<P>The following table lists operations and associated objects and files. 
+<P>
+<TABLE cellPadding=3 border=1>
+  <TBODY>
+  <TR>
+    <TH>Operation 
+    <TH>Files 
+    <TH>Associated Objects </TH>
+  <TR>
+    <TD>Login Form 
+    <TD>loginform.jsp 
+    <TD>EamcetBean </TD>
+  <TR>
+    <TD>Login 
+    <TD>login.jsp 
+    <TD>EamcetBean , CentreBean, CentresBean </TD>
+  <TR>
+    <TD>Admin Login 
+    <TD>adminlogin.html, adminlogin.jsp 
+    <TD>AdminBean </TD>
+  <TR>
+    <TD>Admin Home 
+    <TD>adminhome.html 
+    <TD>&nbsp; </TD>
+  <TR>
+    <TD>Adding New College 
+    <TD>addcollege.html, addcollege.jsp 
+    <TD>AdminBean </TD>
+  <TR>
+    <TD>Adding seats in a branch 
+    <TD>addbranch.jsp 
+    <TD>AdminBean </TD>
+  <TR>
+    <TD>Updating or delete branch details 
+    <TD>updatebranch.jsp 
+    <TD>AdminBean </TD>
+  <TR>
+    <TD>Home 
+    <TD>home.jsp 
+    <TD>Centres, Centre </TD>
+  <TR>
+    <TD>Registration 
+    <TD>registration.jsp 
+    <TD>Centre, Student </TD>
+  <TR>
+    <TD>Selecting Preferences 
+    <TD>liststudents.jsp,preferences.jsp , selectpreference.jsp 
+    <TD>Centre, Student </TD>
+  <TR>
+    <TD>Logging out 
+    <TD>logout.jsp 
+    <TD>Centres, Centre </TD>
+  <TR>
+    <TD>Query available seats 
+    <TD>queryavailability.jsp 
+    <TD>EamcetBean </TD>
+  <TR>
+    <TD>Alloting seat 
+    <TD>allotment.jsp, allotseat.jsp, allotseatfinal.jsp 
+    <TD>EamcetBean,Centres, Centre , Allotment EJB </TD></TR></TBODY></TABLE>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/eamcet.zip">eamcet.zip</A> 
+  and unzip it into <B>webapps </B>directory of Tomcat installation directory. 
+  <LI>Make sure you include Oracle driver classes in the classpath of Tomcat - 
+  use Setclasspath.Bat file for this. 
+  <LI>Create account EAMCETADMIN with password PROJECT in Oracle. 
+  <LI>Logon to EAMCETADMIN account 
+  <LI>Create required tables in Oracle using TABLES.TXT file in EAMCET 
+  directory. 
+  <LI>Logon to System account and run file EAMCET.TXT to create EAMCET account 
+  and required synonyms. This step is optional. Incase you do not want a 
+  separete account then use EAMCETADMIN with password PROJECT in place of EAMCET 
+  with password EAMCET in Java beans. 
+  <LI>Make sure Oracle and Tomcat are running. 
+  <LI>Build the ejb in Allotment directory in EAMCET directory. 
+  <LI>Create the following objects in Weblogic server using Admin console. 
+  <UL>
+    <LI>A connection pool with the name eamcetOracle that connects to Oracle 
+    using EAMCETADMIN account 
+    <LI>A TXDataSource that is based on eamcetOracle with JNDI name - 
+    eamcet.oracle. 
+    <LI>Make sure both these objects are assigned to examples server ( set 
+    examples server as target) 
+    <LI>Make sure the ALLOTMENT EJB is deployed with JNDI name eamcet.allotment. 
+    </LI></UL>
+  <LI>Copy allotment_client.jar from CLIENTCLASSES directory of Weblogic into 
+  LIB directory of WEB-INF of EAMCET. 
+  <LI>Run the application using the following url: <PRE>   http://localhost:8080/eamcet
+ </PRE>
+  <LI>You should see login page of the application. </LI></OL>
+<HR>
+<B>Notes: </B>
+<UL>
+  <LI>This application contains all beans compiled. In case you want to modify 
+  and compile beans then set the classpath and path by running batch file 
+  <B>setenv.bat</B>. 
+  <LI>Being a project done in a J2EE batch, I couldn't take care of all 
+  validations. I suggest you take care of it. </LI></UL>
+<HR>
+</BODY></HTML>

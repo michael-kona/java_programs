@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.srikanthtechnologies.com/javaee/projects/pis.html -->
+<HTML><HEAD><TITLE>Patients Information System</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY>
+<H1>Patients Information System</H1>This web application is used by a doctor to 
+keep track of his/her patients. It manages details of patients, their visits, 
+durgs used by patients, investigations (tests) undergone by patients etc. 
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>NetBeans 5.0 
+  <LI>Tomcat 5.5 embeded in NetBeans 
+  <LI>Oracle10g Express Edition 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans </LI></UL>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Create <B>pis</B>account with password <B>pis</B> in Oracle10g Express 
+  Edition. This must be done after you log in as SYSTEM user. <PRE>      create user pis identified by pis;
+      grant connect,resource to pis;
+    </PRE>
+  <LI>Create required tables in <B>pis</B> account by using commands in 
+  <B>tables.sql</B> file in project directory. 
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/pis.zip">pis.zip</A> 
+  and unzip it into <B>d:\</B> directory. You can substitue <B>d:\</B> with 
+  another path if you like. 
+  <LI>Start NetBeans 5.0 or above 
+  <LI>Open <B>pis</B> project in NetBeans using <B>File-&gt;Open Project</B> 
+  option. 
+  <LI>Add Oracle Library - <B>ojdbc14.jar</B> to libraries of the project. 
+  <LI>Build and deploy the project to embeded Tomcat of NetBeans using <B>Deploy 
+  Project</B> option in popup menu of the project (right click on project in 
+  Projects window). 
+  <LI>Run this project - you must see <B>index.jsp</B> page. </LI></OL>
+<H3>Deploying Web Application In Tomcat of JBoss </H3>The following procedure 
+explains how to deploy a web application, developed with Tomcat that is embeded 
+with NetBeans to Tomcat embeded, in to JBOSS application server. 
+<OL>
+  <LI>You better change port number at which Tomcat in JBoss is running using 
+  <B>JBOSS_HOME\server\default\deploy\jbossweb-tomcat55.sar\server.xml</B> file. 
+  Change port number of HTTP Container from 8080 to 9999 ( or any other port 
+  number). <BR>This is required as <B>Oracle10g</B> also uses 8080. 
+  <LI>Copy <B>pis.war</B> from <B>dist</B> directory of <B>pis</B> project into 
+  <B>JBOSS_HOME\server\default\deploy</B> directory. 
+  <LI>Run the application using the following url: <PRE>  http://localhost:9999/pis </PRE>
+  <LI>You should see home page of the application. </LI></OL></BODY></HTML>

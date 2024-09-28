@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+td {font:10pt verdana}
+th {font:700 10pt verdana}
+body {font:10pt verdana}
+h1 {color:maroon;font:16pt arial;font-weight:700}
+h3 {color:navy;font:700 12pt arial}
+</style>
+</head>
+<body>
+
+
+<h1>Contract Management Tool</h1>
+
+This web application is used by a man power consultant to keep track of his client, candidates, contracts
+and requirements. It allows the employees of the consulting company to search for candidates who suite
+the profile of the requirements of clients and other operations related to contracts.
+
+<h3>Technologies and Products used </h3>
+<ul>
+<li>NetBeans 5.0
+<li>Tomcat 5.5 embeded in NetBeans
+<li>Oracle10g Express Edition
+<li>Java Server Pages (JSP)
+<li>Java Beans
+<li>Custom Tags
+<li>Filter for authentication
+</ul>
+
+<p>
+<b>The following are the steps to related to be taken to run the existing part of the application :</b>
+<p>
+<ol>
+<li>Create <b>cmt</b>account with password <b>cmt</b> in Oracle10g Express Edition. This must be done after you log in as SYSTEM user.
+    <pre>
+      create user cmt identified by cmt;
+      grant connect,resource to cmt;
+    </pre>
+
+<li>Create required tables in <b>cmt</b> account by using commands in <b>tables.sql</b> file of <b>cmt.zip</b>.
+<li>Download  <a href=cmt.zip>cmt.zip</a> and unzip it into <b>d:\</b> directory.
+You can substitue <b>d:\</b> with another path if you like.
+<li>Start NetBeans 5.0 or above
+<li>Open <b>cmt</b> project in NetBeans using <b>File->Open Project</b> option.
+<li>Add Oracle Library - <b>ojdbc14.jar</b>, JSTL library to <b>cmt</b> project.
+<li>Build and deploy the project to embeded Tomcat of NetBeans.
+<li>Run this project - you must see <b>index.jsp</b> page.
+</ol>
+
+<h3>Deploying Web Application In Tomcat of JBoss </h3>
+The following procedure explains how to deploy a web application <b>cmt</b>, developed with Tomcat that is embeded with NetBeans to Tomcat embeded
+in JBOSS application server.
+
+<ol>
+<li>You better change port number at which Tomcat in JBoss is running using <b>JBOSS_HOME\server\default\deploy\jbossweb-tomcat55.sar\server.xml</b> file. Change port number of HTTP Container from 8080 to 9999.
+<br>
+This is required as <b>Oracle10g</b> also uses 8080.
+<li>Copy  <b>cmt.war</b> from <b>dist</b> directory of <b>cmt</b> project into <b>JBOSS_HOME\server\default\deploy</b>  directory.
+<li>Run the application using the following url:
+ <pre>   http://localhost:9999/cmt
+ </pre>
+<li>You should see login page of the application.
+</ol>
+

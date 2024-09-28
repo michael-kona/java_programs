@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.srikanthtechnologies.com/javaee/projects/fmt.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY>
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<H1>Fee Management Tool</H1>This is a web application used by staff of a college 
+or institute to handle all transactions related to fees. It generates arrears 
+report, receipts report etc. 
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>NetBeans 5.0 
+  <LI>Tomcat 5.5 embeded in NetBeans 
+  <LI>Oracle10g Express Edition 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans 
+  <LI>Custom Tags 
+  <LI>Filter for authentication 
+  <LI>Listener for Application events 
+  <LI>JSTL 1.1 
+  <LI>Java Mail 
+  <LI>CMail Server </LI></UL>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Create <B>fmt</B> account with password <B>fmt</B> in Oracle10g Express 
+  Edition. This must be done by after you log in as SYSTEM user. <PRE>      create user fmt identified by fmt;
+      grant connect,resource to fmt;
+    </PRE>
+  <LI>Create required tables in <B>fmt</B> account by using commands in 
+  <B>tables.sql</B> file of <B>fmt.zip</B>. 
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/fmt.zip">fmt.zip</A> 
+  and unzip it into <B>d:\fmt</B> directory. You can substitue <B>d:\</B> with 
+  another path if you like. 
+  <LI>Start NetBeans 5.0 or above 
+  <LI>Open <B>fmt</B> project in NetBeans using <B>File-&gt;Open Project</B> 
+  option. 
+  <LI>Add Oracle Library - <B>ojdbc14.jar</B>, JSTL library and Java Mail 
+  library (mail.jar and activation.jar) to <B>fmt</B> project. 
+  <LI>Build and deploy the project to embeded Tomcat of NetBeans. 
+  <LI>Run this project - you must see <B>login.jsp</B> page. 
+  <LI>Before you run Send Mails program, make sure you create required mail 
+  addresses in CMail Server. </LI></OL>
+<H3>Deploying Web Application In Tomcat of JBoss </H3>The following procedure 
+explains how to deploy a web application <B>fmt</B>, developed with Tomcat that 
+is embeded with NetBeans to Tomcat embeded in JBOSS application server. 
+<OL>
+  <LI>You better change port number at which Tomcat in JBoss is running using 
+  <B>JBOSS_HOME\server\default\deploy\jbossweb-tomcat55.sar\server.xml</B> file. 
+  Change port number of HTTP Container from 8080 to 9999. <BR>This is required 
+  as <B>Oracle10g </B>also uses 8080. 
+  <LI>Copy <B>fmt.war</B> from <B>dist</B> directory of <B>fmt</B> project into 
+  <B>JBOSS_HOME\server\default\deploy</B> directory. 
+  <LI>Run the application using the following url: <PRE>   http://localhost:9999/fmt
+ </PRE>
+  <LI>You should see login page of the application. </LI></OL></BODY></HTML>

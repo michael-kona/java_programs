@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://www.srikanthtechnologies.com/javaee/projects/auction.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY bgColor=wheat>
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<H1>Auction Portal</H1>This is an internet website that allows sellers to sell 
+items through auction and buyers to bid for items. 
+<H3>Major Operations </H3>
+<P>The following are the major operations of this application. 
+<UL>
+  <LI>User logs into site with username and password 
+  <LI>Registration of user 
+  <LI>Change password 
+  <LI>Forgot password - email address is provided to get password 
+  <LI>Adding an item for auction 
+  <LI>Deleting item 
+  <LI>Searching for items for sale 
+  <LI>Bid for item 
+  <LI>Displaying details of seller </LI></UL>
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>Tomcat 4.x 
+  <LI>Oracle8i/Oracle9i 
+  <LI>Weblogic Server 7.0 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans 
+  <LI>Enterprise Java Beans 
+  <LI>Java Mail </LI></UL>
+<P>The following table lists operations and associated objects and files. 
+<P>
+<TABLE cellPadding=3 border=1>
+  <TBODY>
+  <TR>
+    <TH>Operation 
+    <TH>Files 
+    <TH>Associated Objects </TH>
+  <TR>
+    <TD>Login 
+    <TD>login.jsp 
+    <TD>MemberBean Java Bean </TD>
+  <TR>
+    <TD>Registration of User 
+    <TD>register.html, register.jsp 
+    <TD>MemberBean javabean, Member EJB </TD>
+  <TR>
+    <TD>Forgot password 
+    <TD>forgotpassword.jsp 
+    <TD>UserBean JavaBean </TD>
+  <TR>
+    <TD>Changing password 
+    <TD>changepassword.jsp 
+    <TD>MemberBean javabean </TD>
+  <TR>
+    <TD>Home Page 
+    <TD>home.jsp, listitems.jsp 
+    <TD>MemberBean JavaBean </TD>
+  <TR>
+    <TD>Adding an item 
+    <TD>additem.jsp 
+    <TD>MemberBean JavaBean,Item Javabean </TD>
+  <TR>
+    <TD>Bid for item 
+    <TD>bid.jsp, bidforitem.jsp, Item JavaBean 
+    <TD>MemberBean Bean </TD>
+  <TR>
+    <TD>Displaying User's Items 
+    <TD>myitems.jsp 
+    <TD>MemberBean JavaBean </TD>
+  <TR>
+    <TD>Showing bidders 
+    <TD>bidders.jsp 
+    <TD>MemberBean JavaBean </TD>
+  <TR>
+    <TD>Removing an item 
+    <TD>removeitem.jsp 
+    <TD>MemberBean JavaBean, Item Javabean </TD>
+  <TR>
+    <TD>Displaying user information 
+    <TD>userinfo.jsp 
+    <TD>MemberBean JavaBean </TD>
+  <TR>
+    <TD>log out 
+    <TD>logout.jsp 
+    <TD>none </TD></TR></TBODY></TABLE>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/auction.zip">auction.zip</A> 
+  and unzip it into <B>webapps </B>directory of Tomcat installation directory. 
+  <LI>Make sure you copy from jdbc/lib/classes111.zip ( after renaming it to 
+  classes111.jar) or jdbc/lib/classes12.jar from Oracle directory into 
+  WEB-INF/lib directory 
+  <LI>Also make sure the classpath of Tomcat is changed to include weblogic.jar 
+  using <B>setclasspath.cmd </B>in BIN directory of Tomcat or copy weblogic.jar 
+  into WEB-INF/lib directory 
+  <LI>Create account auction with password auction in Oracle by logging in as 
+  SYSTEM. 
+  <LI>Create required tables in Oracle using TABLES.TXT file and also insert 
+  some sample data. 
+  <LI>Make sure Oracle and Tomcat are running. 
+  <LI>Start Weblogic Server and create the following 
+  <UL>
+    <LI>A connection pool with the name auctionpool - It should access Oracle 
+    with auction user and auction password 
+    <LI>A TxDataSource with the name auctionoracle and JNDI name 
+    <B>auction.oracle</B> </LI></UL>
+  <LI>copy <B>examples.properties </B>file from 
+  <B>weblogic700\samples\server\src</B> directory of the weblogic server to 
+  <B>member</B> directory. 
+  <LI>Build the ejb in <B>member</B> directory of application directory using 
+  ANT program. 
+  <LI>Copy member_client.jar from CLIENTCLASSES directory of weblogic server 
+  into WEB-INF/LIB directory of application (auction). 
+  <LI>Run the application using the following url: <PRE>   http://localhost:8080/auction
+ </PRE>
+  <LI>You should see login page (login.jsp) of the application. 
+</LI></OL></BODY></HTML>

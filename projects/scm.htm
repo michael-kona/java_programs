@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.srikanthtechnologies.com/javaee/projects/scm.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.3790.2795" name=GENERATOR></HEAD>
+<BODY bgColor=wheat>
+<STYLE>TD {
+	FONT: 10pt verdana
+}
+TH {
+	FONT: 700 10pt verdana
+}
+BODY {
+	FONT: 10pt verdana
+}
+H1 {
+	FONT: 700 16pt arial; COLOR: maroon
+}
+H3 {
+	FONT: 700 12pt arial; COLOR: navy
+}
+</STYLE>
+
+<H1>Supply Chain Management</H1>This web application runs on corporate intranet 
+and allows branches to place orders with head office. It also allows 
+inter-branch transactions such as transfering stock from one branch to another. 
+<H3>Major Operations </H3>
+<P>The following are the major operations of this portal: 
+<UL>
+  <LI>Login of branch 
+  <LI>Message received from other branches 
+  <LI>Stock levels 
+  <LI>Placing order 
+  <LI>Sending message to other branch 
+  <LI>Listing of pending orders 
+  <LI>List of messages sent 
+  <LI>Transfering stock to another branch 
+  <LI>Receiving goods from another branch/ho 
+  <LI>Details of good received 
+  <LI>Details of goods transferred 
+  <LI>Changing password </LI></UL>
+<H3>Technologies and Products used </H3>
+<UL>
+  <LI>Tomcat 5.x 
+  <LI>Oracle8i/Oracle9i 
+  <LI>JBoss 4.x 
+  <LI>CMail Server 
+  <LI>Java Server Pages (JSP) 
+  <LI>Java Beans 
+  <LI>Enterprise Java Beans </LI></UL>
+<P>The following table lists operations and associated objects and files. 
+<P>
+<TABLE cellPadding=3 border=1>
+  <TBODY>
+  <TR>
+    <TH>Operation 
+    <TH>Files 
+    <TH>Associated Objects </TH>
+  <TR>
+    <TD>Login Page 
+    <TD>login.jsp 
+    <TD>BranchBean Bean </TD>
+  <TR>
+    <TD>Branch Home page 
+    <TD>branchhome.jsp ,links.jsp, messages.jsp 
+    <TD>BranchBean Bean </TD>
+  <TR>
+    <TD>Placing order 
+    <TD>placeorder.jsp, placeorderfinal.jsp 
+    <TD>BranchBean bean , Item bean, ItemsList bean, Branches Tag, Products 
+      Tag </TD>
+  <TR>
+    <TD>Messages received 
+    <TD>messages.jsp 
+    <TD>BranchBean bean </TD>
+  <TR>
+    <TD>Messages Sent 
+    <TD>sentmessages.jsp 
+    <TD>BranchBean bean </TD>
+  <TR>
+    <TD>Sending message 
+    <TD>sendmessageform.jsp, sendmessage.jsp 
+    <TD>BranchBean bean, Branches Tag </TD>
+  <TR>
+    <TD>Receipt of goods 
+    <TD>receiptgood.jsp 
+    <TD>BranchBean bean, StockBean bean, Branches tag, Products tag </TD>
+  <TR>
+    <TD>Transfer of goods 
+    <TD>transfergoods.jsp 
+    <TD>BranchBean bean, StockBean bean, Branches tag, Products tag </TD>
+  <TR>
+    <TD>Displaying Pending orders 
+    <TD>pendingorders.jsp 
+    <TD>BranchBean bean </TD>
+  <TR>
+    <TD>Change password 
+    <TD>changepassword.jsp 
+    <TD>BranchBean bean </TD></TR></TBODY></TABLE>
+<P><B>The following are the steps to related to be taken to run the existing 
+part of the application :</B> 
+<P>
+<OL>
+  <LI>Download <A 
+  href="http://www.srikanthtechnologies.com/javaee/projects/scm.zip">scm.zip</A> 
+  and unzip it into <B>webapps </B>directory of Tomcat installation directory. 
+  <LI>Make sure you copy <B>classes111.zip </B>( after renaming it to 
+  classes111.jar) or <B>classes12.jar</B> into WEB-INF/lib directory 
+  <LI>Compile javabeans in <B>WEB-INF/classes/scm</B> directory. Run batch file 
+  <B>s.bat</B> before compiling javabeans. You may have to make necessary 
+  changes to batch file depending on the directory structure of your system. 
+  <LI>Create account <B>scm</B> with password <B>scm</B> in Oracle Database 
+  using the following command after you log in as SYSTEM or INTERNAL. <PRE>   create user scm identified by scm;
+   grant connect, resource to mft;
+   </PRE>
+  <LI>Create required tables in Oracle using TABLES.TXT file and also insert 
+  some sample data. 
+  <LI>Start Tomcat 
+  <LI>Run the application using the following url: <PRE>   http://localhost:8080/scm/login.jsp
+ </PRE>
+  <LI>You should see login page of the application. </LI></OL>
+<H3>Deploying Web Application In Tomcat of JBoss </H3>The following procedure 
+explains how to deploy a web application MFT, developed with Standalone Tomcat, 
+into Tomcat that is embeded into JBoss. This eliminates the need to use two 
+servers - JBOSS and TOMCAT. Instead by starting JBOSS, we can use Web 
+applications and related EJBs. 
+<P>
+<UL>
+  <LI>Create a .war file for web application SCM by getting into <B>scm</B> 
+  directory of <B>webapps</B> directory of TOMCAT as follows: <PRE>     <B>jar cfv  scm.war  . </B>
+  </PRE>
+  <LI>Copy <B>scm.war</B> file into <B>JBOSS_HOME\server\default\deploy</B> 
+  directory. 
+  <LI>Access the application using <B>http://localhost:8080/scm/login.jsp </B>. 
+  </LI></UL></BODY></HTML>
