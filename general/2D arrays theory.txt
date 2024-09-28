@@ -1,0 +1,13 @@
+2D Arrays in Java
+
+General format for 2D array declaration
+
+   <datatype> <ref. var.>[][]=new <datatype>[<size>][<size>];
+
+Example
+
+int a[][];//ref. var
+a=new int[2][3];//array memory allocation
+
+float f[][]=new float[5][5];
+
