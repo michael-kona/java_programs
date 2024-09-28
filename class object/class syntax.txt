@@ -1,0 +1,16 @@
+class <class name>
+     {
+         <access specifier> <data type1> <var1>;
+         <access specifier> <data type2>  <var2>;
+           .
+           .
+           .
+<access specifier> <return type> <method name1>(<datatype1> <arg1>,<datatype2> <arg2>,...)
+                                 {
+		.............
+		.............
+                                   }
+	.
+	.
+	.
+      }
